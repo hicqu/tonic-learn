@@ -1,0 +1,26 @@
+[package]
+name = "tonic-learn"
+version = "0.1.0"
+authors = ["qupeng <qupeng@pingcap.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tonic = "0.1"
+bytes = "0.5"
+prost = "0.6"
+prost-derive = "0.6"
+tokio = { version = "0.2", features = ["rt-threaded"] }
+futures-util = "0.3"
+
+[build-dependencies]
+tonic-build = "0.1"
+
+[[bin]]
+name = "tonic-server"
+path = "src/server.rs"
+
+[[bin]]
+name = "tonic-client"
+path = "src/client.rs"
